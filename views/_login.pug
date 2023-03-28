@@ -1,0 +1,72 @@
+extends base
+
+block content
+ 
+ .mwb_form_wrapper
+  // ====  End of form-setting-wrapper  ====
+  //
+    ======================================
+    =            login form modal            =
+    =======================================
+  div
+    // class="modal fade"
+    .modal-dialog.mwb_form_modal.modal-dialog-centered
+      .modal-content
+        .modal-body
+          // form
+          .mwb_login_form_wrap
+            h1.bg-image
+              span login
+            form.needs-validation(novalidate='')#loginform
+              .form-row
+                .col-md-12.mb-3
+                  label(for='validationCustomUserEmail') Email
+                  .input-group
+                    input#validationCustomUserEmail.form-control(type='email' placeholder='Email' required='')
+                    .invalid-feedback Enter email.
+              .form-row
+                .col-md-12.mb-3
+                  label(for='validationLoginPassword') Password
+                  .input-group
+                    input#validationLoginPassword.form-control(type='password' placeholder='password' required='')
+                    .invalid-feedback
+                      | Please enter password.
+              .col-md-12
+                label.temp-checkbox-wrap.temp-subscribe-checkbox
+                  input(name='signup_agree_checkbox' value='1' type='checkbox')
+                  |                       Remember me
+                  span.checkmark
+              .mwb_form_btn_wrap
+                button.btn.btn-primary.mwb_form_btn(type='submit')#loginBtn
+                  | login
+                p.mwb-register
+                  a(href='/signup') Create an account
+                p.mwb-register
+                  | Forgot Your 
+                  a(href='#' data-toggle='modal' data-target='#mwb_forgot_modal' data-dismiss='modal') Password?
+  // ====  End of login form modal  ====
+  //
+    ==================================
+    =            Forgot Modal            =
+    ===================================
+  #mwb_forgot_modal.modal.fade
+    .modal-dialog.mwb_form_modal.modal-dialog-centered
+      .modal-content
+        button.close.mwb_close_btn(type='button' data-dismiss='modal')
+          | &times;
+        .modal-body
+          .mwb_forgot_form_wrap
+            h1.bg-image
+              span forgot password
+            form.needs-validation(novalidate='')#forgotPasswordForm
+              .form-row
+                .col-md-12.mb-3
+                  label(for='validationForgetEmail') email
+                  .input-group
+                    input#validationForgetEmail.form-control(type='email' placeholder='email' required='')
+                    .invalid-feedback
+                      | Please enter correct email.
+              .mwb_form_btn_wrap
+                button.btn.btn-primary.mwb_form_btn(type='submit')#forgotPasswordBtn
+                  | send reset link
+  // ====  End of Forgot Modal  ====

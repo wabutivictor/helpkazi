@@ -1,0 +1,22 @@
+nav.navbar.navbar-expand-md.navbar-dark.mwb_form_navigation
+  // Brand
+  a.navbar-brand(href='/home') Help Kazi
+  // Toggler/collapsibe Button
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+    span.navbar-toggler-icon
+  // Navbar links
+  #collapsibleNavbar.collapse.navbar-collapse.justify-content-center
+    ul.navbar-nav.ml-auto.mwb_nav_links
+      li.nav-item
+        a.nav-link(href='/home') Home
+      li.nav-item
+        a.nav-link(href='/jobs') Available Jobs
+      li.nav-item
+        a.nav-link(href='/addjob') Post a job
+      li.nav-item
+       if user
+        a.nav-link(style='display: flex' href='/profile')
+          = user.name
+          
+          svg.bi.bi-person-fill(xmlns='http://www.w3.org/2000/svg' width='19' height='19' fill='currentColor' viewbox='0 0 16 16')
+            path(d='M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z')

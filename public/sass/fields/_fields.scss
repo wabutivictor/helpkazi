@@ -1,0 +1,106 @@
+@import 'variables/variables';
+@import 'mixins/mixins';
+
+/*========================================
+=            checkbox styling            =
+========================================*/
+.temp-checkbox-wrap{
+	@include font-size(12px);
+	position: relative;
+	margin-left: 15px;
+	color: $primary-color;
+	input{
+		content: "";
+		left: -17px;
+		position: absolute;
+		top: -5px;
+		visibility: hidden;
+		&:checked{
+			~.checkmark{
+				background-color:$secondary-color;
+				&:after{
+					display: block;
+				}
+			}
+		}
+	}
+	.checkmark {
+		background: $primary-color;
+		height: 16px;
+		left: -24px;
+		position: absolute;
+		top: 0px;
+		width: 16px;
+		&:after{
+			border-color: #bababa;
+			border-style: solid;
+			border-width: 0 2px 2px 0;
+			content: "";
+			height: 12px;
+			left: 5px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transform: rotate(45deg);
+			width: 6px;
+			border-color: #fff;
+			display: none;
+		}
+	}
+}
+/*=====  End of checkbox styling  ======*/
+/*====================================
+=            radio-button            =
+====================================*/
+.temp-custom-radio-button{
+	padding-left: 23px;
+	position: relative;
+	font-family: 16px;
+	input{
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		&:checked{
+			~.temp-radio-checkmark{
+				background-color: $primary-color;
+				&:after{
+					display: block;
+				}
+			}
+		}
+	}
+	.temp-radio-checkmark{
+		background-color:$secondary-color;
+		@include border-radius(50%);
+		height: 18px;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 18px;
+		&:after{
+			background: white none repeat scroll 0 0;
+			@include border-radius(50%);
+			content: "";
+			display: none;
+			height: 8px;
+			left: 5px;
+			position: absolute;
+			top: 5px;
+			width: 8px;
+		}
+	}
+}
+/*=====  End of radio-button  ======*/
+
+input ,textarea, select{
+	border-radius: 40px !important;
+	border-bottom: 1px solid $primary-color !important;
+
+	&:focus{
+		box-shadow: none !important;
+	}
+}
+
+.form-control:hover{
+	background-color: #efefef;
+}

@@ -1,0 +1,189 @@
+@import 'variables/variables';
+@import 'mixins/mixins';
+/*=========================================
+=            main-page-section            =
+=========================================*/
+.mwb_form_wrapper {
+	height: 100vh;
+	background-image: url('assets/images/banner.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+/*=====  End of main-page-section  ======*/
+
+/*==========================================
+=            navigation-section            =
+==========================================*/
+
+.mwb_form_navigation{
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	background-image:$primary-color;
+	.mwb_nav_links{
+		.nav-link {
+			padding: 18px 13px !important;
+			text-transform: uppercase;
+			color: #ffffff;
+			@include font-size(14px);
+			transition: 0.3s linear all;
+			&:focus{
+				outline: none !important;
+			}
+			&:hover{
+				background-color: #ffffff;
+				color: $secondary-color;
+				transition: 0.3s linear all;
+			}
+		}	
+	}
+}
+
+
+
+/*=====  End of navigation-section  ======*/
+
+
+/*=========================================
+=            subscribe-section            =
+=========================================*/
+
+.mwb_subscribe_input_wrap{
+	label{
+		display: block;
+		@include font-size(13px);
+	}
+}
+
+/*=====  End of subscribe-section  ======*/
+
+
+/*=====================================
+=            setting-style            =
+=====================================*/
+
+.temp-setting-wrapper {
+	background: #ffffff;
+	z-index: 999;
+	position: relative;
+	width: 250px;
+	height: 330px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.temp-change-setting-wrap {
+	position: absolute;
+	content: "";
+	background: #ffffff;
+	z-index: 9;
+	left: -250px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 99;
+	box-shadow: 2px 2px 7px #514c4c;
+	transition: 0.3s linear all;
+	&.active{
+		left: 0;
+		transition: 0.3s linear all;
+	}
+	.temp-setting {
+		position: absolute;
+		right: -45px;
+		z-index: 9999;
+		width: 45px;
+		top: 0;
+		
+		cursor: pointer;
+	}
+	p {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+/*=====  End of setting-style  ======*/
+
+/*====================================
+=            font-setting            =
+====================================*/
+
+
+.temp-font-family {
+	padding: 15px;
+
+
+	.temp-main-font-family-list {
+		padding: 0;
+		margin-bottom: 0 !important;
+
+		.temp-font-menu{
+			border: 1px solid $secondary-color;
+			cursor: pointer;
+			font-weight: 600;
+			padding: 10px;
+			position: relative;
+			#temp-font-menu{
+				margin: 0;
+			}
+			.temp-icon{
+				@include font-size(20px);
+				position: absolute;
+				right: 17px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.temp-font-submenu-list{
+				background: $primary-color;
+				display: none;
+				font-weight: normal;
+				left: 0;
+				padding: 0;
+				position: absolute;
+				top: 45px;
+				width: 100%;
+				z-index: 9999;
+
+				li{
+					&:hover{
+						background: $primary-color ; 
+
+					}
+					&.hide_class{
+						display: none;
+					}
+					a{
+						color: #fff;
+						padding: 7px;
+						display: block;
+						&:hover{
+							background: #ffffff;
+							color: $secondary-color;
+
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/*=====  End of font-setting  ======*/
+
+
+/*=====================================
+=            color-setting            =
+=====================================*/
+
+.temp-color-setting{
+	padding: 15px;
+	width: 250px;
+
+	input{
+		display: inline-block;
+	}
+	.temp-custom-radio-button {
+		display: inline;
+	}
+
+}
+
+/*=====  End of color-setting  ======*/

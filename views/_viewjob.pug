@@ -1,0 +1,95 @@
+extends base 
+
+block content 
+ .mwb_form_wrapper
+  .container-fluid
+    .row.mt-3
+      .col-xl-12.col-md-6
+        .card.p-3
+          .card-box
+            h4.header-title.mt-0.mb-4 Job Details
+            p Edit the job details and press save to update.
+      .m-3
+      .col-xl-12.col-md-6
+        .card.p-3
+          .card-box.text-center
+            form(role='form')#updatejobForm
+              p(style="display:none")#jobmark= selectedJob._id
+              h4.mt-1 Update Job Details
+              .form-group
+                label(for='updateJobName') Name
+                input#updateJobName.form-control(type='text' required aria-describedby='emailHelp' value=`${selectedJob.name}` placeholder='Kazi gani')
+                small#emailHelp.form-text.text-muted This name will be visible to your employees
+              .form-group
+                label(for='updateJobLocation') Location
+                input#updateJobLocation.form-control(type='text' value=`${selectedJob.location}` required placeholder=`${selectedJob.location}`)
+              .form-group
+                label(for='updateJobdetails') Details
+                input#updateJobdetails.form-control(type='text' value=`${selectedJob.details}` required placeholder=`${selectedJob.details}`)
+              .form-group
+                label(for='updateJobdate') Start Date
+                input#updateJobdate.form-control(type='date' value=`${selectedJob.startDate}` required placeholder=`${selectedJob.startDate}`)
+              .form-group
+                label(for='updateJobemployee') Employees Needed 
+                input#updateJobemployee.form-control(type='number' value=`${selectedJob.employees}` required step='1' placeholder=`${selectedJob.employees}`)
+              .form-group
+                label(for='updateJobsalary') Salary 
+                input#updateJobsalary.form-control(type='number'  value=`${selectedJob.salary}` required placeholder=`${selectedJob.salary}`)
+              .form-group
+                label(for='updateJobhours') Hours of work 
+                input#updateJobhours.form-control(type='number' value=`${selectedJob.hours}`  required step='1' placeholder=`${selectedJob.hours}`)
+              button.btn.btn-primary(type='submit')#updateJobBtn
+                | Update Details
+              br 
+              a.btn.btn-danger(href="#" data-id=`${selectedJob._id}`)#deleteJobBtn.m-3
+                | Delete Job  
+      // end col
+      
+    hr.mt-5
+    .row.p-3.m-1
+      h2 Job Applicant Details
+      .table-responsive
+        table.table.table-hover.mb-0
+          thead
+            tr
+              th #
+              th Name
+              th Email
+              th Phone
+              th Applied
+              th
+              th
+          tbody
+           - let applicationspresent = jobApplicants.length>0 ? true : false
+           if applicationspresent
+            each application in jobApplicants
+             p(style="diplay:none")#jobMark= application._id
+             tr
+              td 1
+              td= application.userID.name
+              td= application.userID.email
+              td= application.userID.phone
+              td= application.date
+              - let rejected = application.approved == "Pending" ? true : false
+              if rejected
+               td
+                a.btn.btn-primary(href='#' data-id=`${application._id}` ).ApproveJobBtn Approve 
+               td
+                a.btn.btn-danger(href='#' data-id=`${application._id}`).RejectJobBtn Reject 
+              - let Rejectstate = application.approved == "Rejected" ? true : false 
+              if Rejectstate
+                td(style='text-align: center' colspan='2') Rejected
+              - let acceptState = application.approved == "Approved" ? true : false    
+              if acceptState
+                td(style='text-align: center' colspan='2') Approved 
+                 
+           else
+            td(style='text-align: center' colspan='7') No job application has been received
+                 
+    .row.p-3.m-3
+      br
+    .row
+      .col-md-12.p-3(style='text-align: center')
+        h4 &copy; Help Kazi
+
+ 

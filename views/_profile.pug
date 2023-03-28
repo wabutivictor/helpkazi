@@ -1,0 +1,47 @@
+extends base 
+
+block content 
+ .mwb_form_wrapper
+  .container-fluid
+    .row.mt-3
+      .col-xl-12.col-md-6
+        .card.p-3
+          .card-box
+            h4.header-title.mt-0.mb-4 Profile Details
+            - let greeting = `Hi ${user.name.split(" ")[0]}, We use this information to get you a job`
+            p= greeting 
+    .row
+      .col-xl-6.mt-3.col-md-6
+        .card.p-3
+          .card-box.text-center
+            form(role='form')
+              h4.mt-1 Profile Details
+              .form-group
+                label(for='exampleInputEmail1') Name
+                input#exampleInputEmail1.form-control(type='text' aria-describedby='emailHelp' placeholder=`${user.name}` value=`${user.name}`)
+              .form-group
+                label(for='exampleInputEmail1') Email
+                input#exampleInputEmail1.form-control(type='text' aria-describedby='emailHelp' placeholder=`${user.email}` value= `${user.email}`)
+              button.btn.btn-primary(type='submit')
+                | Update Details
+      .col-xl-6.mt-3.col-md-6
+        .card.p-3
+          .card-box.text-center
+            form(role='form')
+              h4.mt-1 Password Update
+              .form-group
+                label(for='exampleInputEmail1') Old Password
+                input#exampleInputEmail1.form-control(type='password' aria-describedby='emailHelp' placeholder='OLD *******')
+              .form-group
+                label(for='exampleInputEmail1') New Password
+                input#exampleInputEmail1.form-control(type='password' aria-describedby='emailHelp' placeholder='New ********')
+              .form-group
+                label(for='exampleInputEmail1') Confirm Password
+                input#exampleInputEmail1.form-control(type='password' aria-describedby='emailHelp' placeholder='********')
+              button.btn.btn-success(type='submit')
+                | Save Password
+    // end col
+    hr.mt-5
+    .row
+      .col-md-12.p-3(style='text-align: center')
+        h4 &copy; Help Kazi

@@ -1,0 +1,127 @@
+extends base 
+
+block content 
+ .mwb_form_wrapper
+  .container-fluid
+    .row
+      .col-md-12
+        .card
+          .card-body.bg-image
+            h1(style='color: white')
+              span  Over 57 Jobs Available just for you.
+            div(style='text-align: center; position: relative; z-index: 100')
+              a.btn.btn-primary(href='/jobs') Browse Jobs
+    .row.mt-3
+      .col-xl-4.col-md-6
+        .card.p-3
+          .card-box
+            h4.header-title.mt-0.mb-4 Total Applications
+            .widget-chart-1
+              .widget-chart-box-1.float-left(dir='ltr')
+                | Jobs applied
+              .widget-detail-1.text-right
+                h2.font-weight-normal.pt-2.mb-1= totalapplied
+                p.text-muted.mb-1 Applications this Month
+      // end col
+      .col-xl-4.col-md-6
+        .card.p-3
+          .card-box
+            h4.header-title.mt-0.mb-3 Jobs Growth
+            .widget-box-2
+              .widget-detail-2.text-right
+                span.badge.badge-pink.badge-pill.float-left.mt-3
+                  | 32% 
+                  i.mdi.mdi-trending-up
+                h2.font-weight-normal.mb-1 58
+                p.text-muted.mb-3 New Jobs today
+              .progress.progress-bar-alt-pink.progress-sm
+                .progress-bar.bg-pink(role='progressbar' aria-valuenow='77' aria-valuemin='0' aria-valuemax='100' style='width: 77%')
+                  span.sr-only 77% Complete
+      // end col
+      .col-xl-4.col-md-6
+        .card.p-3
+          .card-box
+            h4.header-title.mt-0.mb-4 Total Revenue
+            .widget-chart-1
+              .widget-chart-box-1.float-left(dir='ltr')
+                | Jobs Paid
+              .widget-detail-1.text-right
+                - let total = `KSh ${ksh}`
+                h2.font-weight-normal.pt-2.mb-1= total
+                p.text-muted.mb-1 Revenue today
+      // end col
+    hr.mt-5
+    .row.p-3.m-1
+      h2 Your Job Application
+      .table-responsive
+        table.table.table-hover.mb-0
+          thead
+            tr
+              th #
+              th Job Name
+              th Start Date
+              th Status
+              th Salary
+          tbody
+            each job in appliedJobs
+             - let appliedPjobs =  job.jobID ? true : false
+             if appliedPjobs
+              tr
+               td 1
+               td= job.jobID.name
+               td= job.jobID.startDate
+               td
+                 span.badge.badge-danger= job.approved
+               - let jobSalary = `KSh ${job.jobID.salary} ` 
+               td= jobSalary
+ 
+    .row.p-3.m-1
+      h2
+        span.badge.badge-primary Approved
+        |  Jobs
+      .table-responsive
+        p Please contact the employer to get started
+        table.table.table-hover.mb-0
+          thead
+            tr
+              th #
+              th Job Name
+              th Approved Date
+              th Employer Contact
+              th Employer Name
+          tbody
+           - let presentJob = approvedJobs.length>0 ? true :false
+           if presentJob
+           each approvedApplication in approvedJobs
+            tr
+              td 1
+              td= approvedApplication.jobID.name
+              td= approvedApplication.date
+              td
+                a(href=`tel:${approvedApplication.employerID.phone}`)= approvedApplication.employerID.phone
+              td= approvedApplication.employerID.name
+           else  
+            tr
+              td(style='text-align: center' colspan='5')
+                svg.bi.bi-info-circle-fill(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewbox='0 0 16 16')
+                  path(d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z')
+                |                     No Application Has Been Approved Yet
+    .row.p-3.m-3
+      .col-md-6(style='text-align: center')
+        .card.p-3(style='\
+        background-color: #ffffff;\
+        box-shadow: 1px 10px 10px #00000026;\
+        ')
+          h3 Want something done?
+          a.btn.btn-success(style='color: white' href='/addjob') Post a job
+      .col-md-6(style='text-align: center')
+        .card.p-3(style='\
+        background-color: #ffffff;\
+        box-shadow: 1px 10px 10px #00000026;\
+        ')
+          h3 Want to work?
+          a.btn.btn-primary(href='/jobs')  Find Employers 
+    .row
+      .col-md-12.p-3(style='text-align: center')
+        h4 &copy; Help Kazi
+

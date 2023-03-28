@@ -1,0 +1,48 @@
+@import 'variables/variables';
+@import 'mixins/mixins';
+
+/*=================================
+=            cross-btn            =
+=================================*/
+
+.mwb_close_btn {
+	position: absolute;
+	right: -15px;
+	
+	color: #fff;
+
+	z-index: 9;
+	
+	opacity: 1;
+	@include font-size(40px);
+	top: -15px;
+	font-weight: 400;
+	@include border-radius(50%);
+	background:$primary-color;
+	&:hover{
+		color: #ffffff !important;
+	}
+}
+button.close {
+	padding: 0px 10px 3px 10px;
+}
+/*=====  End of cross-btn  ======*/
+
+/*================================
+=            form-btn            =
+================================*/
+.mwb_form_btn_wrap {
+	text-align: center;
+
+	.mwb_form_btn {
+		background-image: linear-gradient(to bottom, #09203f 0%, #2b4a63 100%);
+		border: 0 !important;
+		@include border-radius(40px);
+		padding: 7px 45px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
+
+
+/*=====  End of form-btn  ======*/

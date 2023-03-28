@@ -1,0 +1,96 @@
+extends base 
+
+block content 
+ .mwb_form_wrapper
+  .container-fluid
+    .row.mt-3
+      .col-xl-12.col-md-6
+        .card.p-3
+          .card-box
+            h4.header-title.mt-0.mb-4 Total Applications
+            .widget-chart-1
+              .widget-detail-1.text-left
+                h2.font-weight-normal.pt-2.mb-1= totalapplications
+                p.text-muted.mb-1 Applications this Month
+      .m-3
+      .col-xl-12.col-md-6
+        .card.p-3
+          .card-box.text-center
+            svg.bi.bi-bell-fill(xmlns='http://www.w3.org/2000/svg' width='46' height='46' fill='currentColor' viewbox='0 0 16 16')
+              path(d='M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z')
+            h5.header-title.mt-0.mb-4
+              | Do not send any money to any employer for whatever reason
+              | given. A formal contract needs to be signed to ensure your
+              | legitimacy
+            p
+              a(href='/terms') Help Kazi Terms &amp; Conditions Apply
+      // end col
+    hr.mt-5
+    .row.p-3.m-1
+      h2 Available Jobs
+      .table-responsive
+        table.table.table-hover.mb-0
+          thead
+            tr
+              th #
+              th Job Name
+              th Job Location
+              th Details
+              th Start Date
+              th Positions
+              th Salary
+              th Hours
+              th Employer
+              th Contact
+              th Action
+          tbody
+            each availableJob in jobs
+             tr
+              td 1
+              td= availableJob.name
+              td= availableJob.location
+              td= availableJob.details
+              td= availableJob.startDate
+              td
+                span.badge.badge-info 2 Available
+              - let salary = `KSh ${availableJob.salary}`  
+              td= salary
+              td= availableJob.hours 
+              td= availableJob.employerID.name
+              td
+                a(href='tel:+254710664418')= availableJob.employerID.phone
+              td
+                a.btn.jobApplyBtn.btn-primary(data-toggle='modal' data-target='#applyJobModal' data-empIdnt=`${availableJob.employerID._id}`  data-userIdnt=`${user._id}` data-dismiss='modal' data-id=`${availableJob._id}` href='#')
+                  | Apply
+    .row.p-3.m-3
+      .col-md-3
+      .col-md-6(style='text-align: center')
+        .card.p-3(style='\
+        background-color: #ffffff;\
+        box-shadow: 1px 10px 10px #00000026;\
+        ')
+          h3 OR
+          a.btn.btn-success(style='color: white' href='/addjob') Post a job
+      .col-md-3
+    .row
+      .col-md-12.p-3(style='text-align: center')
+        h4 &copy; Help Kazi
+ #applyJobModal.modal.fade
+  .modal-dialog.mwb_form_modal.modal-dialog-centered
+    .modal-content
+      p(style="display:none")#jobModalId
+      p(style="display:none")#empmark
+      p(style="display:none")#usermark
+      button.close.mwb_close_btn(type='button' data-dismiss='modal')
+        | &times;
+      .modal-body
+        .mwb_forgot_form_wrap
+          h1.bg-image(style='font-size: 25px')
+            span Are you sure you want to apply for this Job?
+          form.needs-validation(novalidate='')#applyJobForm
+            .form-row
+              .col-md-12.mb-1.text-center
+                a.btn.btn-danger(data-dismiss='modal' href='#') Cancel
+            .mwb_form_btn_wrap
+              button#applyjobbtn.btn.btn-primary(type='submit')
+                | Apply Job

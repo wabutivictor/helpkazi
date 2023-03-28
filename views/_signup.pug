@@ -1,0 +1,50 @@
+extends base
+
+block content
+ .mwb_form_wrapper
+  div
+    // class="modal fade"
+    .modal-dialog.mwb_form_modal.modal-dialog-centered
+      .modal-content
+        .modal-body
+          .mwb_registration_form_wrap
+            h1.bg-image
+              span registration
+            form.needs-validation(novalidate='')#signupForm
+              .form-row
+                .col-md-12.mb-3
+                  label(for='signupName') Name
+                  .input-group
+                    input#signupName.form-control(type='text' placeholder='Name' required='')
+                    .invalid-feedback Please enter name.
+              .form-row
+                .col-md-12.mb-3
+                  label(for='signupEmail') Email
+                  .input-group
+                    input#signupEmail.form-control(type='email' placeholder='email' required='')
+                    .invalid-feedback Please enter email.
+              .form-row
+                .col-md-12.mb-3
+                  label(for='signupPhone') Phone
+                  .input-group
+                    input#signupPhone.form-control(type='number' placeholder='phone' required='')
+                    .invalid-feedback Please enter your phonw.
+              .form-row
+                .col-md-6.mb-3
+                  label(for='signuppassword') Password
+                  .input-group
+                    input#signuppassword.form-control(type='password' placeholder='password' required='')
+                    .invalid-feedback
+                      | Please enter password.
+                .col-md-6.mb-3
+                  label(for='signupConfirmpassword') confirm Password
+                  .input-group
+                    input#signupConfirmpassword.form-control(type='password' placeholder='confirm password' required='')
+                    .invalid-feedback
+                      | Please enter password.
+              .mwb_form_btn_wrap
+                button#signupBtn.btn.btn-primary.mwb_form_btn(type='submit')
+                  | create account
+                p.mwb-register
+                  | Already have an account?
+                  a(href='/') Login

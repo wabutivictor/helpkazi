@@ -1,0 +1,523 @@
+/*=================================
+=            cross-btn            =
+=================================*/
+.mwb_close_btn {
+  position: absolute;
+  right: -15px;
+  color: #fff;
+  z-index: 9;
+  opacity: 1;
+  -webkit-font-size: 40px;
+  -moz-font-size: 40px;
+  -ms-font-size: 40px;
+  font-size: 40px;
+  top: -15px;
+  font-weight: 400;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+}
+.mwb_close_btn:hover {
+  color: #ffffff !important;
+}
+
+button.close {
+  padding: 0px 10px 3px 10px;
+}
+
+/*=====  End of cross-btn  ======*/
+/*================================
+=            form-btn            =
+================================*/
+.mwb_form_btn_wrap {
+  text-align: center;
+}
+.mwb_form_btn_wrap .mwb_form_btn {
+  background-image: linear-gradient(to bottom, #09203f 0%, #2b4a63 100%);
+  border: 0 !important;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  border-radius: 40px;
+  padding: 7px 45px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/*=====  End of form-btn  ======*/
+/*========================================
+=            checkbox styling            =
+========================================*/
+.temp-checkbox-wrap {
+  -webkit-font-size: 12px;
+  -moz-font-size: 12px;
+  -ms-font-size: 12px;
+  font-size: 12px;
+  position: relative;
+  margin-left: 15px;
+  color: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+}
+.temp-checkbox-wrap input {
+  content: "";
+  left: -17px;
+  position: absolute;
+  top: -5px;
+  visibility: hidden;
+}
+.temp-checkbox-wrap input:checked ~ .checkmark {
+  background-color: #363b42;
+}
+.temp-checkbox-wrap input:checked ~ .checkmark:after {
+  display: block;
+}
+.temp-checkbox-wrap .checkmark {
+  background: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+  height: 16px;
+  left: -24px;
+  position: absolute;
+  top: 0px;
+  width: 16px;
+}
+.temp-checkbox-wrap .checkmark:after {
+  border-color: #bababa;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  content: "";
+  height: 12px;
+  left: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(45deg);
+  width: 6px;
+  border-color: #fff;
+  display: none;
+}
+
+/*=====  End of checkbox styling  ======*/
+/*====================================
+=            radio-button            =
+====================================*/
+.temp-custom-radio-button {
+  padding-left: 23px;
+  position: relative;
+  font-family: 16px;
+}
+.temp-custom-radio-button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.temp-custom-radio-button input:checked ~ .temp-radio-checkmark {
+  background-color: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+}
+.temp-custom-radio-button input:checked ~ .temp-radio-checkmark:after {
+  display: block;
+}
+.temp-custom-radio-button .temp-radio-checkmark {
+  background-color: #363b42;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 18px;
+}
+.temp-custom-radio-button .temp-radio-checkmark:after {
+  background: white none repeat scroll 0 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  content: "";
+  display: none;
+  height: 8px;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  width: 8px;
+}
+
+/*=====  End of radio-button  ======*/
+input,
+textarea,
+select {
+  border-radius: 40px !important;
+  border-bottom: 1px solid linear-gradient(to bottom, #09203f 0%, #425e74 100%) !important;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: none !important;
+}
+
+.form-control:hover {
+  background-color: #efefef;
+}
+
+a:focus {
+  outline: none !important;
+}
+a:hover {
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+ul li {
+  list-style: none !important;
+}
+
+h1 {
+  -webkit-font-size: 38px;
+  -moz-font-size: 38px;
+  -ms-font-size: 38px;
+  font-size: 38px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  /* background-image: url("assets/images/work.jpg"); */
+  background-size: cover;
+  margin-top: -16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 80px 24px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  position: relative;
+}
+.bg-image {
+  background-image: url("assets/images/work.jpg");
+  background-size: cover;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.bg-image::after {
+  background-image: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  opacity: 0.7;
+  margin: 0 auto;
+  content: "";
+}
+/* h1:after {
+  background-image: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0.7;
+  margin: 0 auto;
+  content: "";
+} */
+h1 span {
+  z-index: 9;
+  position: relative;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.mwb_form_modal {
+  max-width: 450px !important;
+  width: 100%;
+}
+
+form {
+  margin-top: 35px;
+  padding: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #484848;
+  text-transform: capitalize;
+}
+
+.form-row {
+  margin-bottom: 6px;
+}
+
+.mwb-register {
+  margin-top: 20px;
+}
+
+/*=========================================
+=            main-page-section            =
+=========================================*/
+.mwb_form_wrapper {
+  height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+}
+
+/*=====  End of main-page-section  ======*/
+/*==========================================
+=            navigation-section            =
+==========================================*/
+.mwb_form_navigation {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background-image: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+}
+.mwb_form_navigation .mwb_nav_links .nav-link {
+  padding: 18px 13px !important;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-font-size: 14px;
+  -moz-font-size: 14px;
+  -ms-font-size: 14px;
+  font-size: 14px;
+  transition: 0.3s linear all;
+}
+.mwb_form_navigation .mwb_nav_links .nav-link:focus {
+  outline: none !important;
+}
+.mwb_form_navigation .mwb_nav_links .nav-link:hover {
+  background-color: #ffffff;
+  color: #363b42;
+  transition: 0.3s linear all;
+}
+
+/*=====  End of navigation-section  ======*/
+/*=========================================
+=            subscribe-section            =
+=========================================*/
+.mwb_subscribe_input_wrap label {
+  display: block;
+  -webkit-font-size: 13px;
+  -moz-font-size: 13px;
+  -ms-font-size: 13px;
+  font-size: 13px;
+}
+
+/*=====  End of subscribe-section  ======*/
+/*=====================================
+=            setting-style            =
+=====================================*/
+.temp-setting-wrapper {
+  background: #ffffff;
+  z-index: 999;
+  position: relative;
+  width: 250px;
+  height: 330px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.temp-change-setting-wrap {
+  position: absolute;
+  content: "";
+  background: #ffffff;
+  z-index: 9;
+  left: -250px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  box-shadow: 2px 2px 7px #514c4c;
+  transition: 0.3s linear all;
+}
+.temp-change-setting-wrap.active {
+  left: 0;
+  transition: 0.3s linear all;
+}
+.temp-change-setting-wrap .temp-setting {
+  position: absolute;
+  right: -45px;
+  z-index: 9999;
+  width: 45px;
+  top: 0;
+  cursor: pointer;
+}
+.temp-change-setting-wrap p {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/*=====  End of setting-style  ======*/
+/*====================================
+=            font-setting            =
+====================================*/
+.temp-font-family {
+  padding: 15px;
+}
+.temp-font-family .temp-main-font-family-list {
+  padding: 0;
+  margin-bottom: 0 !important;
+}
+.temp-font-family .temp-main-font-family-list .temp-font-menu {
+  border: 1px solid #363b42;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px;
+  position: relative;
+}
+.temp-font-family .temp-main-font-family-list .temp-font-menu #temp-font-menu {
+  margin: 0;
+}
+.temp-font-family .temp-main-font-family-list .temp-font-menu .temp-icon {
+  -webkit-font-size: 20px;
+  -moz-font-size: 20px;
+  -ms-font-size: 20px;
+  font-size: 20px;
+  position: absolute;
+  right: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.temp-font-family
+  .temp-main-font-family-list
+  .temp-font-menu
+  .temp-font-submenu-list {
+  background: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+  display: none;
+  font-weight: normal;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  z-index: 9999;
+}
+.temp-font-family
+  .temp-main-font-family-list
+  .temp-font-menu
+  .temp-font-submenu-list
+  li:hover {
+  background: linear-gradient(to bottom, #09203f 0%, #425e74 100%);
+}
+.temp-font-family
+  .temp-main-font-family-list
+  .temp-font-menu
+  .temp-font-submenu-list
+  li.hide_class {
+  display: none;
+}
+.temp-font-family
+  .temp-main-font-family-list
+  .temp-font-menu
+  .temp-font-submenu-list
+  li
+  a {
+  color: #fff;
+  padding: 7px;
+  display: block;
+}
+.temp-font-family
+  .temp-main-font-family-list
+  .temp-font-menu
+  .temp-font-submenu-list
+  li
+  a:hover {
+  background: #ffffff;
+  color: #363b42;
+}
+
+/*=====  End of font-setting  ======*/
+/*=====================================
+=            color-setting            =
+=====================================*/
+.temp-color-setting {
+  padding: 15px;
+  width: 250px;
+}
+.temp-color-setting input {
+  display: inline-block;
+}
+.temp-color-setting .temp-custom-radio-button {
+  display: inline;
+}
+
+/*=====  End of color-setting  ======*/
+/*===================================
+=            media-query            =
+===================================*/
+@media screen and (max-width: 1080px) {
+  .mwb_form_navigation .mwb_nav_links .nav-link {
+    padding: 18px 8px !important;
+    font-weight: 500;
+    color: #ffffff;
+    -webkit-font-size: 12px;
+    -moz-font-size: 12px;
+    -ms-font-size: 12px;
+    font-size: 12px;
+  }
+  .mwb_form_navigation .navbar-brand {
+    -webkit-font-size: 15px;
+    -moz-font-size: 15px;
+    -ms-font-size: 15px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .mwb_form_wrapper .mwb_form_hero_heading h2 {
+    -webkit-font-size: 30px;
+    -moz-font-size: 30px;
+    -ms-font-size: 30px;
+    font-size: 30px;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mwb_form_navigation .mwb_nav_links .nav-link {
+    padding: 18px 4px !important;
+  }
+}
+@media screen and (max-width: 786px) {
+  .mwb_form_wrapper .mwb_form_hero_heading h2 {
+    -webkit-font-size: 28px;
+    -moz-font-size: 28px;
+    -ms-font-size: 28px;
+    font-size: 28px;
+    padding: 20px;
+    line-height: 40px;
+  }
+  .mwb_form_wrapper .mwb_form_hero_heading h3 {
+    -webkit-font-size: 19px;
+    -moz-font-size: 19px;
+    -ms-font-size: 19px;
+    font-size: 19px;
+    padding: 20px;
+  }
+
+  .mwb_form_modal {
+    padding: 20px;
+    margin: 0;
+  }
+
+  h1 {
+    -webkit-font-size: 20px;
+    -moz-font-size: 20px;
+    -ms-font-size: 20px;
+    font-size: 20px;
+  }
+
+  .mwb_form_btn_wrap .mwb_form_btn {
+    padding: 10px 16px;
+    -webkit-font-size: 12px;
+    -moz-font-size: 12px;
+    -ms-font-size: 12px;
+    font-size: 12px;
+  }
+}
+/*=====  End of media-query  ======*/

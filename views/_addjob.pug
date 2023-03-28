@@ -1,0 +1,106 @@
+extends base 
+
+block content 
+ .mwb_form_wrapper
+  .container-fluid
+    .row.mt-3
+      .col-xl-12.col-md-6
+        .card.p-3
+          .card-box
+            h4.header-title.mt-0.mb-4 Your Jobs
+            .widget-chart-1
+              .widget-detail-1.text-left
+                h2.font-weight-normal.pt-2.mb-1= totalJobs
+                p.text-muted.mb-1 Posted
+      .m-3
+      .col-xl-12.col-md-6
+        .card.p-3
+          .card-box.text-center
+            svg.bi.bi-bell-fill(xmlns='http://www.w3.org/2000/svg' width='46' height='46' fill='currentColor' viewbox='0 0 16 16')
+              path(d='M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z')
+            h5.header-title.mt-0.mb-4
+              | You are required to be formal and provide trustworthy details
+              | to your employees.
+            p
+              a(href='/terms') Help Kazi Terms &amp; Conditions Apply
+      // end col
+    hr.mt-5
+    .row.p-3.m-1
+      h2 Existing Jobs
+      .table-responsive
+        table.table.table-hover.mb-0
+          thead
+            tr
+              th #
+              th Job Name
+              th Job Location
+              th Details
+              th Start Date
+              th Employees
+              th Available
+              th Salary
+              th Hours
+              th Action
+          tbody
+           - let jobspresent = userJobs.length > 0 ? true : false 
+           if jobspresent
+            each job in userJobs
+             tr
+              td 1
+              td= job.name
+              td= job.location
+              td= job.details
+              td= job.startDate
+              td= job.employees
+              - let remainder = job.employees-1
+              td= remainder
+              - let salary = `KSh ${job.salary}`
+              td= salary
+              td= job.hours
+              td
+               a.btn.btn-primary(href=`/viewjob/${job._id}`) View 
+           else 
+             td(style='text-align: center' colspan='10') You have not posted any job
+    .row.p-3.m-3
+      .col-md-12
+        a.btn.btn-primary(style='color: white; width: 100%' data-toggle='modal' data-target='#addjob' href='#') Add A New Job
+    .row
+      .col-md-12.p-3(style='text-align: center')
+        h4 &copy; Help Kazi
+ #addjob.modal.fade
+  .modal-dialog.mwb_form_modal.modal-dialog-centered
+    p(style="display:none")#ownerRep= user._id
+    .modal-content.p-2
+      button.close.mwb_close_btn(type='button' data-dismiss='modal')
+        | &times;
+      .card-box
+        form(role='form')#addjobForm
+          h4.mt-1 Job Details
+          .form-group
+            label(for='addJobName') Name
+            input#addJobName.form-control(type='text' aria-describedby='emailHelp' required placeholder='Kazi gani')
+            small#emailHelp.form-text.text-muted This name will be visible to your employees
+          .form-group
+            label(for='addJobLocation') Location
+            input#addJobLocation.form-control(type='text' required placeholder='Mabungo')
+          .form-group
+            label(for='addJobdetails') Details
+            input#addJobdetails.form-control(type='text' required placeholder='details')
+          .form-group
+            label(for='addJobdate') Start Date
+            input#addJobdate.form-control(type='date' required placeholder='date')
+          .form-group
+            label(for='addJobemployee') Employees Needed 
+            input#addJobemployee.form-control(type='number' required step='1' placeholder='1')
+          .form-group
+            label(for='addJobsalary') Salary 
+            input#addJobsalary.form-control(type='number' required placeholder='8000')
+          .form-group
+            label(for='addJobhours') Hours of work 
+            input#addJobhours.form-control(type='number'  required step='1' placeholder='5')
+          .form-group
+            .checkbox
+              input#checkbox0(type='checkbox' required)
+              label(for='checkbox0')
+                | I agree to help Kazi Terms and Conditions
+          button#addJobBtn.btn.btn-primary(type='submit') Add job

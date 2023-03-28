@@ -1,0 +1,84 @@
+@import 'variables/variables';
+@import 'mixins/mixins';
+
+/*===================================
+=            media-query            =
+===================================*/
+
+@media screen and (max-width: 1080px){
+
+	.mwb_form_navigation{
+
+		.mwb_nav_links {
+			.nav-link {
+				padding: 18px 8px !important;
+
+				font-weight: 500;
+				color: #ffffff;
+				@include font-size(12px);
+			}
+		}
+
+		.navbar-brand {
+			@include font-size(15px);
+			font-weight: bold;
+
+		}
+	} 
+
+	.mwb_form_wrapper{
+		.mwb_form_hero_heading{
+			h2 {
+				@include font-size(30px);
+				padding: 20px;
+
+			}
+			
+		}
+	} 
+}
+
+
+@media screen and (max-width: 992px){
+
+	.mwb_form_navigation{
+		.mwb_nav_links {
+			.nav-link {
+				padding: 18px 4px !important;
+
+			}
+		}
+	} 
+}
+
+@media screen and (max-width: 786px){
+	.mwb_form_wrapper{
+		.mwb_form_hero_heading{
+			h2 {
+				@include font-size(28px);
+				padding: 20px;
+				line-height: 40px;
+			}
+			h3 {
+				@include font-size(19px);
+				padding: 20px;
+			}
+		}
+	} 
+
+	.mwb_form_modal {
+		padding: 20px;
+		margin: 0;
+	}
+	h1 {
+		@include font-size(20px);
+	}
+	.mwb_form_btn_wrap{
+		.mwb_form_btn {
+			padding: 10px 16px;
+			@include font-size(12px);
+		}
+	} 
+}
+
+/*=====  End of media-query  ======*/
