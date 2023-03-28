@@ -3,7 +3,7 @@ let dotenv = require("dotenv");
 let express = require("express");
 dotenv.config({ path: "./config.env" });
 let mongoose = require("mongoose");
-let DB = process.env.DBSTRING.replace("<PASSWORD>", process.env.DBPASSWORD);
+let DB = process.env.DBSTRING.replace("<password>", process.env.DBPASSWORD);
 let port = process.env.PORT || 2000;
 let errorResponder = express();
 let path = require("path");

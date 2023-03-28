@@ -55,7 +55,7 @@ Helpkazi is an online job booking system for maseno university
 
 ### Developers
 
-1. [Stephen Mwau](https://github.com/MwauStephen)
+1. [Stephen Mwau](https://github.com/wabutivictor)
 2. [Alexander Karanja](https://github.com/aknjoroge)
 
 ---
