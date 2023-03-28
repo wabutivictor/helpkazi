@@ -1,7 +1,7 @@
 {
-  "name": "techkey-client-dashboard",
+  "name": "help kazi jobs",
   "version": "1.0.0",
-  "description": "Client portal for techkey cybernetics",
+  "description": "jobs website",
   "main": "server.js",
   "scripts": {
     "start": " node server.js",
@@ -11,12 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/wabutivictor/helpkazi.git"
   },
-  "author": "Alexander Karanja",
+  "author": "Keya Victor",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aknjoroge/client-Dashboard-API.git/issues"
+    "url": "https://github.com/wabutivictor/helpkazi.git"
   },
-  "homepage": "https://github.com/aknjoroge/client-Dashboard-API.git#readme",
+  "homepage": "https://github.com/wabutivictor/helpkazi.git",
   "dependencies": {
     "axios": "^0.21.4",
     "bcrypt": "^5.0.1",

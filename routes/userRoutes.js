@@ -2,7 +2,6 @@ let express = require("express");
 
 let userControler = require("../controller/usersController");
 let authControler = require("../controller/authControler");
-// let viewControler = require("../controller/viewsController");
 
 let routes = express.Router();
 
