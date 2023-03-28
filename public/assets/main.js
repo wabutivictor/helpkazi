@@ -28,7 +28,7 @@ if (logoutBtn) {
       console.log(err);
     }
   };
-  logoutBtn.addEventListener("click", logoutProcess);
+  logoutBtn.addEventListener("submit", logoutProcess);
 }
 //end of logout
 let jobApplyBtn = document.querySelectorAll(".jobApplyBtn");
