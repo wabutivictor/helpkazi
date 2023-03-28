@@ -9,10 +9,12 @@ let deleteJobBtn = document.getElementById("deleteJobBtn");
 let ApproveJobBtn = document.querySelectorAll(".ApproveJobBtn");
 let RejectJobBtn = document.querySelectorAll(".RejectJobBtn");
 //logout function
+// Get the logout button element
 let logoutBtn = document.getElementById("logoutBtn");
 
 if (logoutBtn) {
-  let logoutProcess = async function (e) {
+  // Add an event listener for the "click" event
+  logoutBtn.addEventListener("click", async function (e) {
     e.preventDefault();
     try {
       let res = await axios({
@@ -27,10 +29,9 @@ if (logoutBtn) {
     } catch (err) {
       console.log(err);
     }
-  };
-  logoutBtn.addEventListener("submit", logoutProcess);
+  });
 }
-//end of logout
+
 let jobApplyBtn = document.querySelectorAll(".jobApplyBtn");
 if (loginform) {
   let loginProcess = async function (e) {
