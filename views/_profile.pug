@@ -24,6 +24,9 @@ block content
                 input#exampleInputEmail1.form-control(type='text' aria-describedby='emailHelp' placeholder=`${user.email}` value= `${user.email}`)
               button.btn.btn-primary(type='submit')
                 | Update Details
+              button#logoutBtn.btn.btn-danger(type='button')
+                | Logout
+  
       .col-xl-6.mt-3.col-md-6
         .card.p-3
           .card-box.text-center
