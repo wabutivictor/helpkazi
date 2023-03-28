@@ -8,7 +8,29 @@ let updatejobForm = document.getElementById("updatejobForm");
 let deleteJobBtn = document.getElementById("deleteJobBtn");
 let ApproveJobBtn = document.querySelectorAll(".ApproveJobBtn");
 let RejectJobBtn = document.querySelectorAll(".RejectJobBtn");
+//logout function
+let logoutBtn = document.getElementById("logoutBtn");
 
+if (logoutBtn) {
+  let logoutProcess = async function (e) {
+    e.preventDefault();
+    try {
+      let res = await axios({
+        method: "get",
+        url: `/api/v1/users/logout`,
+      });
+      if (res.data.status == "success") {
+        location.assign("/login");
+      } else {
+        console.log(res.data);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  logoutBtn.addEventListener("click", logoutProcess);
+}
+//end of logout
 let jobApplyBtn = document.querySelectorAll(".jobApplyBtn");
 if (loginform) {
   let loginProcess = async function (e) {

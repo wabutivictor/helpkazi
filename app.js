@@ -63,6 +63,14 @@ app.use("/", viewRoutes);
 app.use("/api/v1/revenue", revenueRoute);
 app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
+app.get("/api/v1/users/logout", (req, res) => {
+  res.clearCookie("jwt");
+  req.session.destroy(() => {
+    res.status(200).json({
+      status: "success",
+    });
+  });
+});
 
 app.use("*", function (req, res, next) {
   res.json({

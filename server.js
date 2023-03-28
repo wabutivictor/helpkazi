@@ -7,6 +7,7 @@ let DB = process.env.DBSTRING.replace("<password>", process.env.DBPASSWORD);
 let port = process.env.PORT || 2000;
 let errorResponder = express();
 let path = require("path");
+//const mongoClient = require('mongodb');
 // let app = require("./app");
 const pug = require("pug");
 let serverActive = false;
