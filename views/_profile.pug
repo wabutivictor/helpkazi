@@ -41,8 +41,12 @@ block content
                 input#exampleInputEmail1.form-control(type='password' aria-describedby='emailHelp' placeholder='********')
               button.btn.btn-success(type='submit')
                 | Save Password
+
     // end col
     hr.mt-5
     .row
       .col-md-12.p-3(style='text-align: center')
+        form(action='/logout' method='POST')
+        button#logoutBtn.btn.btn-danger(type='submit')
+          | Logout
         h4 &copy; Help Kazi
