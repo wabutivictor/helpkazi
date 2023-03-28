@@ -15,7 +15,6 @@ routes.delete("/:id", userControler.deletUser);
 routes.patch("/:id", userControler.updateUser);
 routes.post("/forgotPassword/", authControler.forgotPassword);
 routes.post("/resetpassword/:token", authControler.resetPassword);
-// routes.get("/resetpassword/:token", viewControler.resetForm);
 routes.post("/updateme", authControler.protected, authControler.updatepassword);
 routes.post("/contact", userControler.usercontact);
 routes.post(
